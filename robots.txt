@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /classes
+
+Sitemap: https://jessewei.dev/sitemap.xml

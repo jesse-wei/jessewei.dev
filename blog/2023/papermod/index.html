@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Overview of Hugo/PaperMod, modifying PaperMod, and comparison to al-folio | Jesse Wei</title>
+    <meta name="author" content="Jesse Wei">
+    <meta name="description" content="I originally built my site with Hugo using the PaperMod theme. I kept track of the changes I made to the theme and describe them here.">
+    <meta name="keywords" content="jesse wei, unc, computer science, cs, mathematics, math, blog, portfolio, unc, university of north carolina, chapel hill">
+
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Jesse Wei">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jesse Wei | Overview of Hugo/PaperMod, modifying PaperMod, and comparison to al-folio">
+    <meta property="og:url" content="https://jessewei.dev/blog/2023/papermod/">
+    <meta property="og:description" content="I originally built my site with Hugo using the PaperMod theme. I kept track of the changes I made to the theme and describe them here.">
+    
+    <meta property="og:locale" content="en">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Overview of Hugo/PaperMod, modifying PaperMod, and comparison to al-folio">
+    <meta name="twitter:description" content="I originally built my site with Hugo using the PaperMod theme. I kept track of the changes I made to the theme and describe them here.">
+    
+    
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Bootstrap Table -->
+    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/vs.css" media="" id="highlight_theme_light">
+
+    
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    
+
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    
+
+    
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    
+
+    
+    <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg">
+    
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://jessewei.dev/blog/2023/papermod/">
+
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/monokai.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Jesse </span>Wei</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/"></a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">blog<span class="sr-only">(current)</span></a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/projects/">projects</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/teaching/">teaching</a>
+              </li>
+
+              <!-- Toggle theme mode -->
+              <li class="toggle-container">
+                <button id="light-toggle" title="Change theme">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Scrolling Progress Bar -->
+      <progress id="progress" value="0">
+        <div class="progress-container">
+          <span class="progress-bar"></span>
+        </div>
+      </progress>
+    </header>
+
+
+    <!-- Content -->
+    <div class="container mt-5">
+      
+        
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc-sidebar" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+            <!-- _layouts/post.html -->
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Overview of Hugo/PaperMod, modifying PaperMod, and comparison to al-folio</h1>
+    <p class="post-meta">May 15, 2023</p>
+    <p class="post-tags">
+      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+        ·  
+        <a href="/blog/tag/hugo">
+          <i class="fas fa-hashtag fa-sm"></i> hugo</a>  
+          <a href="/blog/tag/papermod">
+          <i class="fas fa-hashtag fa-sm"></i> papermod</a>  
+          
+        ·  
+        <a href="/blog/category/website">
+          <i class="fas fa-tag fa-sm"></i> website</a>  
+          
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    
+    <div id="markdown-content">
+      <h2 id="introduction">Introduction</h2>
+
+<p>I built my old site (not this one) with <a href="https://gohugo.io/" rel="external nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/adityatelange/hugo-PaperMod" rel="external nofollow noopener" target="_blank">PaperMod</a> and hosted on <a href="https://www.netlify.com" rel="external nofollow noopener" target="_blank">Netlify</a>.</p>
+
+<p>My old site is still accessible via <a href="https://main--cheerful-mousse-b9d87b.netlify.app" rel="external nofollow noopener" target="_blank">https://main–cheerful-mousse-b9d87b.netlify.app</a>, and here’s the <a href="https://github.com/jesse-wei/jessewei.dev-PaperMod" rel="external nofollow noopener" target="_blank">GitHub repo</a>. For the rest of this post, I’ll refer to it as my (old) PaperMod site.</p>
+
+<p>In this post, I provide an overview of Hugo and PaperMod and describe the modifications I made to the original theme in setting up my old site. Specifically, my <a href="https://main--cheerful-mousse-b9d87b.netlify.app/posts/papermod_diff/" rel="external nofollow noopener" target="_blank">PaperMod_diff page</a> shows <code class="language-plaintext highlighter-rouge">diff</code>s between my site and the original theme in HTML pages, and you should refer to it. Instead of bloating this post with inline code, I’ll let you know the relevant files, and you can check out the <code class="language-plaintext highlighter-rouge">diff</code>s (well-documented, with citations of where I found code from).</p>
+
+<p>I have now switched to <a href="https://jekyllrb.com/" rel="external nofollow noopener" target="_blank">Jekyll</a> using the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme (though the theme matters a lot more than the static site generator, imo). I provide comparisons of PaperMod and al-folio throughout this post.</p>
+
+<h2 id="why-did-i-switch">Why did I switch?</h2>
+
+<p>Obviously, something must’ve gone wrong for me to switch. Before I switched, I had kept track of all the changes I made to PaperMod in this post, and I also updated the post a bit. If you’d like to make a PaperMod website and aren’t satisfied with its base functionality, then this post would be pretty helpful for you and save you a lot of time.</p>
+
+<p>On the flip side, this post also serves as a review of PaperMod’s functionality (rather, all the missing functionality). It’s possible to implement these features, as I describe here, but the implementations I found are suboptimal and just not worth the effort, in my opinion.</p>
+
+<p>In short, there are <em>a ton</em> of missing features in PaperMod. Check the table of contents on the sidebar under the <a href="#my-website">My website</a> heading for the important missing features I noticed and implemented or found implementations for. It turns out that implementations of all of these missing features already exist and are submitted in PRs and issues, but the creator of PaperMod rejects the code. I suppose there’s value in keeping PaperMod simple and minimal, but I spent several weeks implementing and searching for implementations of these important features. And several implementations I found are suboptimal.</p>
+
+<p>On the other hand, al-folio already implements all of these features well. Switching over to al-folio took a day of work and just involved messing with the config file and copying over the Markdown content, with some minor tweaks. I hardly tweaked the theme itself at all, and I have found only one minor bug so far.</p>
+
+<p>Before proceeding, I want to preface the rest of this post by saying that the creators and contributors of PaperMod and al-folio are all way more skilled than me and have contributed a ton to the community. I think al-folio is better overall, but both themes are great, and making them obviously took a lot more work and skill than writing a little blog post. I’m just sharing my experience and opinions.</p>
+
+<h3 id="audience">Audience</h3>
+
+<p>This post was written with two audiences in mind: people who are new to Hugo and people with Hugo experience. If you’re new to Hugo, then I recommend reading this post from start to finish. If you have experience with Hugo, then I recommend skimming. Specifically, I would read <a href="#clonefork">Clone/fork</a> for setup instructions. Then skip over the <a href="#overview-of-hugo-and-papermod">Hugo/PaperMod overview</a> to get to <a href="#my-website">My website</a>, which describes specific features of my website. Please see the Table of Contents for an overview.</p>
+
+<h3 id="credit">Credit</h3>
+
+<p>This post is inspired by Konstantin’s similarly-titled <a href="https://kpwn.de/2021/09/how-to-set-up-this-blog/" rel="external nofollow noopener" target="_blank">blog post</a>.</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>Before proceeding, I’d like to share five excellent resources that I used and reference throughout this post. The top three are crucial because they cover Hugo and PaperMod. The bottom two describe very specific features that I reference in <a href="#my-website">My website</a>, so don’t worry about those yet.</p>
+
+<p>My goal is to make the rest of this post self-contained (and link to brief external resources). If something doesn’t make sense, please use the first three resources.</p>
+
+<ul>
+  <li>
+<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> <a href="https://gohugo.io/getting-started/quick-start" rel="external nofollow noopener" target="_blank">Hugo Quick Start</a>
+    <ul>
+      <li>Super quick to read and follow along, &lt; 5 min.</li>
+    </ul>
+  </li>
+  <li>
+<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> <a href="https://www.youtube.com/watch?v=hjD9jTi_DQ4" rel="external nofollow noopener" target="_blank">Getting Started With Hugo</a> (47:41)</li>
+  <li>
+<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> <a href="https://adityatelange.github.io/hugo-PaperMod/" rel="external nofollow noopener" target="_blank">PaperMod demo site/documentation</a> and its <a href="https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite" rel="external nofollow noopener" target="_blank">source</a>
+</li>
+  <li>
+<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup> <a href="https://kpwn.de/2021/09/how-to-set-up-this-blog/" rel="external nofollow noopener" target="_blank">Konstantin’s How to Set Up This Blog</a>
+</li>
+  <li>
+<sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup> <a href="https://robb.sh/posts/check-links-in-hugo-with-htmltest/" rel="external nofollow noopener" target="_blank">Check links in Hugo with htmltest</a>
+</li>
+</ul>
+
+<p>As mentioned earlier, I also created PaperMod diff <sup id="fnref:10"><a href="#fn:10" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> to show modifications I made to the theme in a readable way. In short, to modify a file from the theme, you create a copy of the file and make edits in the copy, but this makes it hard to see what was modified. So, PaperMod diff shows <code class="language-plaintext highlighter-rouge">diff</code>s between the files.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>First, follow the steps <a href="https://gohugo.io/installation/" rel="external nofollow noopener" target="_blank">here</a> to install Hugo. You should also have Git installed. <sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">7</a></sup></p>
+
+<h3 id="clonefork">Clone/fork</h3>
+
+<p>Run these commands.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">--recurse-submodules</span> <span class="nt">--no-single-branch</span> https://github.com/jesse-wei/jessewei.dev-PaperMod.git
+<span class="nb">cd </span>jessewei.dev-PaperMod
+hugo server
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">--recurse-submodule</code> clones the PaperMod <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" rel="external nofollow noopener" target="_blank">submodule</a>.</p>
+
+<p>Additionally, you may clone with <code class="language-plaintext highlighter-rouge">--depth=1</code> to save some disk space.</p>
+
+<p><code class="language-plaintext highlighter-rouge">hugo server</code> starts up a server for you to view the site.</p>
+
+<h3 id="why-clonefork">Why clone/fork?</h3>
+
+<p>At this point, you could start from scratch instead of cloning/forking my website. However, resources <sup id="fnref:1:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> and <sup id="fnref:2:1"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> already describe how to start from scratch.</p>
+
+<p>So, I’ll cut to the chase and have you clone my website and describe changes I made.</p>
+
+<p>If something doesn’t make sense, then I recommend first reading/watching the <a href="#resources">resources</a>.</p>
+
+<p>In addition, if you notice some specific feature of my website that I don’t explain, then use inspect element to inspect the code for that feature. Then run <code class="language-plaintext highlighter-rouge">grep -ir</code> in this repo to find the relevant code. <code class="language-plaintext highlighter-rouge">-r</code> makes the search recursive, and <code class="language-plaintext highlighter-rouge">-i</code> makes the search case-insensitive. You can also use VSCode’s code-searching feature with Ctrl/Cmd+Shift+F. Lastly, you can also leave a comment below.</p>
+
+<h2 id="overview-of-hugo-and-papermod">Overview of Hugo and PaperMod</h2>
+
+<p>Skim this section or skip to <a href="#my-website">My website</a> if you’re already familiar with Hugo and PaperMod (e.g., if you read/watched the <a href="#resources">resources</a>).</p>
+
+<h3 id="repo-structure">Repo structure</h3>
+
+<p>Please read <a href="https://gohugo.io/getting-started/directory-structure/" rel="external nofollow noopener" target="_blank">Hugo’s directory structure</a> (3 min) and the top part of <a href="https://gohugo.io/content-management/organization/" rel="external nofollow noopener" target="_blank">Hugo’s content organization</a> (1 min) for a general overview of Hugo’s directory structure. I’ll describe more in-depth below.</p>
+
+<p>Here’s the structure of my repository. I omit unimportant stuff and stuff I don’t use, and certainly changes will be made, but this is all the important stuff:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jessewei.dev-PaperMod
+├── assets                  Overrides PaperMod/assets. Contains mostly CSS, some JS
+│   └── css
+├── config.yml              Site-wide configuration file
+├── content
+│   ├── about.md
+│   ├── archives.md
+│   ├── classes
+│   ├── posts               List layout
+│   ├── privacy.md
+│   ├── projects            List layout
+│   ├── search.md
+│   └── teaching            List layout
+│       └── act             List layout within list layout
+├── layouts                 Overrides PaperMod/layouts
+│   ├── _default            Layout of entire pages (specifically, the &lt;main&gt; element)
+│   │   └── single.html
+│   └── partials            Layout of components of a page
+│       ├── comments.html
+│       ├── extend_head.html
+│       ├── footer.html
+│       ├── header.html
+│       ├── index_profile.html
+│       └── social_icons.html
+├── scripts                 My scripts
+├── static                  Images, etc.
+│   ├── SAPsim_still_cropped.jpg
+│   ├── SAPsim_still_full.jpg
+│   └── ...
+└── themes
+    └── PaperMod
+</code></pre></div></div>
+
+<p>There are 4 crucial parts of the repo: <code class="language-plaintext highlighter-rouge">config</code>, <code class="language-plaintext highlighter-rouge">content</code>, <code class="language-plaintext highlighter-rouge">layouts</code> and <code class="language-plaintext highlighter-rouge">assets</code>, and <code class="language-plaintext highlighter-rouge">static</code>.</p>
+
+<h3 id="configyml"><code class="language-plaintext highlighter-rouge">config.yml</code></h3>
+
+<p>This is the configuration file for the website containing all site-wide parameters.</p>
+
+<h3 id="content"><code class="language-plaintext highlighter-rouge">content/</code></h3>
+
+<p>This is the directory where site content (posts) goes.</p>
+
+<p>Site content should be Markdown files.</p>
+
+<p>The front matter of a Markdown file contains metadata about the post. For example, the front matter of this post is</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Overview</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Hugo/PaperMod</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Setting</span><span class="nv"> </span><span class="s">Up</span><span class="nv"> </span><span class="s">This</span><span class="nv"> </span><span class="s">Site"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2023-05-14T20:13:59-04:00</span>
+<span class="na">draft</span><span class="pi">:</span> <span class="kc">false</span>
+<span class="na">cover</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">img/hugo_logo_wide.svg</span>
+    <span class="na">alt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hugo</span><span class="nv"> </span><span class="s">logo"</span>
+    <span class="na">caption</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hugo</span><span class="nv"> </span><span class="s">logo"</span>
+    <span class="na">hidden</span><span class="pi">:</span> <span class="kc">false</span>
+<span class="na">summary</span><span class="pi">:</span> <span class="s2">"</span><span class="s">This</span><span class="nv"> </span><span class="s">post</span><span class="nv"> </span><span class="s">provides</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">overview</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Hugo</span><span class="nv"> </span><span class="s">(PaperMod</span><span class="nv"> </span><span class="s">theme)</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">details</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">steps</span><span class="nv"> </span><span class="s">I</span><span class="nv"> </span><span class="s">took</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">setting</span><span class="nv"> </span><span class="s">up</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">website."</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Hugo"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">PaperMod"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Markdown"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">HTML"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">CSS"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Blog"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Website"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Portfolio"</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>This information is used to generate the post’s page. It’s quite intuitive what these fields do (check by seeing how something in front matter renders on the page), so I won’t go into detail.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>For a list of variables you can use, see [Variables</td>
+      <td>Front Matter](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-variables/#page-variables) from PaperMod documentation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="layouts-and-assets">
+<code class="language-plaintext highlighter-rouge">layouts/</code> and <code class="language-plaintext highlighter-rouge">assets/</code>
+</h3>
+
+<p>The files in these directories override the files in <code class="language-plaintext highlighter-rouge">themes/PaperMod/layouts/</code> and <code class="language-plaintext highlighter-rouge">themes/PaperMod/assets/</code>, respectively. If the path of a file in <code class="language-plaintext highlighter-rouge">layouts/</code> exactly matches that of a file in <code class="language-plaintext highlighter-rouge">themes/PaperMod/layouts/</code>, then your site will use the file in <code class="language-plaintext highlighter-rouge">layouts/</code> instead of the one in <code class="language-plaintext highlighter-rouge">themes/PaperMod/layouts/</code>. Same for <code class="language-plaintext highlighter-rouge">assets/</code>.</p>
+
+<p>Essentially, <code class="language-plaintext highlighter-rouge">themes/PaperMod/layouts/</code> and <code class="language-plaintext highlighter-rouge">themes/PaperMod/assets/</code> specify defaults. If you want to make a change, override the default in your own repo.</p>
+
+<p><code class="language-plaintext highlighter-rouge">layouts/</code> contains HTML files that specify the structure of pages.</p>
+
+<p>Let’s look at <code class="language-plaintext highlighter-rouge">PaperMod/layouts/_default/</code>.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>themes/PaperMod/layouts/_default
+├── _markup
+├── archives.html
+├── baseof.html
+├── index.json
+├── list.html
+├── rss.xml
+├── search.html
+├── single.html
+└── terms.html
+</code></pre></div></div>
+
+<h4 id="baseof">baseof</h4>
+
+<p>In particular, here’s <code class="language-plaintext highlighter-rouge">baseof.html</code>. Note that double braces <code class="language-plaintext highlighter-rouge">{ { } }</code> (without space between braces) are used in the actual code, but I will be using single braces from now on so the code can be correctly rendered in this page.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"{ site.Language }"</span> <span class="na">dir=</span><span class="s">"{ .Language.LanguageDirection | default "</span><span class="na">auto</span><span class="err">"</span> <span class="err">}"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+    {- partial "head.html" . }
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">"
+{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}
+{- print "</span><span class="na">list</span><span class="err">"</span> <span class="na">-</span><span class="err">}</span>
+<span class="err">{</span><span class="na">-</span> <span class="na">end</span> <span class="na">-</span><span class="err">}</span>
+<span class="err">{</span><span class="na">-</span> <span class="na">if</span> <span class="na">eq</span> <span class="na">site.Params.defaultTheme</span> <span class="err">`</span><span class="na">dark</span><span class="err">`</span> <span class="na">-</span><span class="err">}</span>
+<span class="err">{</span><span class="na">-</span> <span class="na">print</span> <span class="err">"</span> <span class="na">dark</span><span class="err">"</span> <span class="err">}</span>
+<span class="err">{</span><span class="na">-</span> <span class="na">end</span> <span class="na">-</span><span class="err">}</span>
+<span class="err">"</span> <span class="na">id=</span><span class="s">"top"</span><span class="nt">&gt;</span>
+    {- partialCached "header.html" . .Page -}
+    <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+        {- block "main" . }{ end }
+    <span class="nt">&lt;/main&gt;</span>
+    { partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}
+<span class="nt">&lt;/body&gt;</span></code></pre></figure>
+
+<p>This is the base template for all pages. Notice it has all parts of an HTML document: <code class="language-plaintext highlighter-rouge">&lt;!DOCTYPE html&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>, and <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>.</p>
+
+<p>It’s mostly HTML. However, note the code in braces <code class="language-plaintext highlighter-rouge">{ { ... } }</code> or <code class="language-plaintext highlighter-rouge">{ {- ... -} }</code>. This is <a href="https://golang.org/pkg/text/template/" rel="external nofollow noopener" target="_blank">Go template</a> code. It’s a templating language that Hugo uses to generate HTML.</p>
+
+<p>Note on line 2 that a <a href="https://gohugo.io/variables/site/" rel="external nofollow noopener" target="_blank">site variable</a> <code class="language-plaintext highlighter-rouge">site.Language</code> is directly inserted into an HTML attribute. Some site variables are in <code class="language-plaintext highlighter-rouge">config.yml</code>, and others are built-in to Hugo.</p>
+
+<p>Note on line 5 that a partial <code class="language-plaintext highlighter-rouge">head.html</code> is inserted. A partial is an HTML snippet that can be inserted into a page. As we can see here, the partial <code class="language-plaintext highlighter-rouge">head.html</code> (which can be found under <code class="language-plaintext highlighter-rouge">layouts/partials/head.html</code>) is the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> code of all pages.</p>
+
+<p>Does this mean all pages have the same <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> code?</p>
+
+<p>Nope, notice one last thing on line 9: conditionals! By checking the values of some variables, we can conditionally insert HTML code. Lines 9-14 just insert some classes, but it’s also possible to insert entire HTML snippets or partials. So although all pages have the same template for <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>, the actual <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> code depends on parameters.</p>
+
+<p>On lines 16 and 20, we see partials defining the header and footer of a page. In the middle is <code class="language-plaintext highlighter-rouge">&lt;main&gt;</code> for the content of a page. All files in <code class="language-plaintext highlighter-rouge">_default</code> except <code class="language-plaintext highlighter-rouge">baseof.html</code> define <code class="language-plaintext highlighter-rouge">&lt;main&gt;</code>.</p>
+
+<h4 id="single">single</h4>
+
+<p>Most pages are singles (<code class="language-plaintext highlighter-rouge">layouts/_default/single.html</code>). For example, this post on my <a href="https://cheerful-mousse-b9d87b.netlify.app/posts/setup_site/" rel="external nofollow noopener" target="_blank">original site</a> is a single.</p>
+
+<p>A portion of <code class="language-plaintext highlighter-rouge">single.html</code> is below.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{- define "main" }
+
+<span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"post-single"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"post-header"</span><span class="nt">&gt;</span>
+    { partial "breadcrumbs.html" . }
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"post-title"</span><span class="nt">&gt;</span>
+      { .Title }
+      {- if .Draft }<span class="nt">&lt;sup&gt;&lt;span</span> <span class="na">class=</span><span class="s">"entry-isdraft"</span><span class="nt">&gt;</span><span class="ni">&amp;nbsp;&amp;nbsp;</span>[draft]<span class="nt">&lt;/span&gt;&lt;/sup&gt;</span>{- end }
+    <span class="nt">&lt;/h1&gt;</span>
+    {- if .Description }
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-description"</span><span class="nt">&gt;</span>
+      { .Description }
+    <span class="nt">&lt;/div&gt;</span>
+    {- end }
+    {- if not (.Param "hideMeta") }
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-meta"</span><span class="nt">&gt;</span>
+      {- partial "post_meta.html" . -}
+      {- partial "translation_list.html" . -}
+      {- partial "edit_post.html" . -}
+      {- partial "post_canonical.html" . -}
+<span class="c">&lt;!-- Rest of code omitted --&gt;</span>
+</code></pre></div></div>
+
+<p>Notice this code goes in the <code class="language-plaintext highlighter-rouge">"main"</code> block from line 17 of <code class="language-plaintext highlighter-rouge">baseof.html</code>. You could inspect element a single page on my old PaperMod site to confirm. The code is quite intuitive, so you should be able to see how this code (in addition to front matter and site variables) causes certain elements to appear at the top of the page.</p>
+
+<h4 id="specifying-layout-of-a-page">Specifying layout of a page</h4>
+
+<p>You should rarely have to manually specify the <code class="language-plaintext highlighter-rouge">layout</code> of a page in front matter. Hugo determines whether a page is a single or list by directory structure. Most pages should be singles, of course.</p>
+
+<p>You can see an example of a list layout at my <a href="https://main--cheerful-mousse-b9d87b.netlify.app/projects/" rel="external nofollow noopener" target="_blank">projects</a> page. However, I did not specify this layout manually: It’s automatically a list layout because <code class="language-plaintext highlighter-rouge">projects/</code> has directories but no <code class="language-plaintext highlighter-rouge">index.md</code> file.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>content/projects
+├── leds
+├── mips_emulator
+├── neuroruler
+├── rubiks_541
+└── sapsim
+</code></pre></div></div>
+
+<p>I have two pages where I manually set the layout in front matter. One is <a href="https://main--cheerful-mousse-b9d87b.netlify.app/search/" rel="external nofollow noopener" target="_blank">Search</a>, and the other is <a href="https://main--cheerful-mousse-b9d87b.netlify.app/archives/" rel="external nofollow noopener" target="_blank">Archives</a>.</p>
+
+<p>Here’s the front matter of <code class="language-plaintext highlighter-rouge">search.md</code>, and it’s similar for <code class="language-plaintext highlighter-rouge">archives.md</code>.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Search"</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">search"</span>
+<span class="na">summary</span><span class="pi">:</span> <span class="s2">"</span><span class="s">search"</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>This topic is further described in <a href="#content-1">Content</a>.</p>
+
+<h3 id="static"><code class="language-plaintext highlighter-rouge">static/</code></h3>
+
+<p>The fourth and final important part is <code class="language-plaintext highlighter-rouge">static/</code>. This is where static files, such as images, go.</p>
+
+<p>I don’t have very many images here because I prefer to group images with the post itself in <code class="language-plaintext highlighter-rouge">content/</code>.</p>
+
+<p>Note that after compilation, files in <code class="language-plaintext highlighter-rouge">static/</code> are copied to the root directory <code class="language-plaintext highlighter-rouge">/</code>. So, when accessing a file in <code class="language-plaintext highlighter-rouge">static/</code>, you should prepend a <code class="language-plaintext highlighter-rouge">/</code> to the file path. For example, the image <code class="language-plaintext highlighter-rouge">static/1.jpg</code> should be accessed as <code class="language-plaintext highlighter-rouge">/1.jpg</code>. In practice, I’ve found that the leading <code class="language-plaintext highlighter-rouge">/</code> can often be omitted. Just know that something like <code class="language-plaintext highlighter-rouge">/static/1.jpg</code> won’t work.</p>
+
+<h3 id="logo">Logo</h3>
+
+<p>Site logos are configured in two places in the config.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">params</span><span class="pi">:</span>
+  <span class="c1"># OpenGraph image displayed when posting site link on socials</span>
+  <span class="c1"># For example, if you post the link to the site in Discord, this image will be displayed</span>
+  <span class="c1"># This image is used with &lt;meta property="og:image" ...&gt; and &lt;meta property="twitter:image" ...&gt;</span>
+  <span class="na">images</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">logo_outlined_6.png"</span><span class="pi">]</span>
+
+  <span class="c1"># ...</span>
+
+  <span class="c1"># Logo and name shown on top left of site</span>
+  <span class="na">label</span><span class="pi">:</span>
+    <span class="na">text</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Jesse</span><span class="nv"> </span><span class="s">Wei"</span>
+    <span class="na">icon</span><span class="pi">:</span> <span class="s">/logo_filled_outlined_6.png</span>
+    <span class="na">iconHeight</span><span class="pi">:</span> <span class="m">35</span>
+</code></pre></div></div>
+
+<p>It’s pretty self-explanatory. I do want to show an example of how the website looks when posted in Discord.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/papermod/social_logo-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/papermod/social_logo-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/papermod/social_logo-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/papermod/social_logo.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" alt="OpenGraph image Discord" title="OpenGraph image Discord" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<div class="caption">OpenGraph image in Discord</div>
+
+<h3 id="favicons">Favicons</h3>
+
+<p>See the <a href="https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-faq/#adding-custom-favicons" rel="external nofollow noopener" target="_blank">PaperMod documentation</a>. <a href="https://favicon.io" rel="external nofollow noopener" target="_blank">favicon.io</a> is very convenient for generating favicons!</p>
+
+<h3 id="shortcodes">Shortcodes</h3>
+
+<p>I want to mention <a href="https://gohugo.io/content-management/shortcodes/" rel="external nofollow noopener" target="_blank">shortcodes</a>. There are times when you need raw HTML (e.g., figure with centered caption, YouTube video embed, etc.), and shortcodes are shortcodes for doing so. Quite a few are <a href="https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes" rel="external nofollow noopener" target="_blank">built in to Hugo</a> and PaperMod, and they’re very convenient.</p>
+
+<p>Shortcodes are not built-in to al-folio, to my knowledge, however. In al-folio, the convention is just to inline the raw HTML, so that’s what I’ll be doing to replicate the result of the shortcodes (see my old PaperMod site for the actual results). If you inspect the source code, then you’ll see how convenient shortcodes are!</p>
+
+<h4 id="raw-html">Raw HTML</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{<span class="nt">&lt;</span> <span class="nt">rawhtml</span> <span class="nt">&gt;</span>}
+<span class="nt">&lt;p</span> <span class="na">align=</span><span class="s">"center"</span><span class="nt">&gt;&lt;strong&gt;</span>This is raw HTML<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+{<span class="nt">&lt;</span> <span class="err">/</span><span class="na">rawhtml</span> <span class="nt">&gt;</span>}
+</code></pre></div></div>
+
+<p align="center"><strong>This is raw HTML</strong></p>
+
+<h4 id="figure">Figure</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ <span class="nt">&lt;</span> <span class="nt">figure</span> <span class="na">src=</span><span class="s">"img/social_logo.jpg"</span> <span class="na">caption=</span><span class="s">"OpenGraph image Discord"</span> <span class="na">alt=</span><span class="s">"OpenGraph image Discord"</span> <span class="na">align=</span><span class="s">"center"</span><span class="nt">&gt;</span>}
+</code></pre></div></div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/papermod/social_logo-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/papermod/social_logo-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/papermod/social_logo-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/papermod/social_logo.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" alt="OpenGraph image Discord" title="OpenGraph image Discord" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<div class="caption">OpenGraph image in Discord</div>
+
+<p><a href="https://gohugo.io/content-management/shortcodes/#figure" rel="external nofollow noopener" target="_blank">Hugo documentation</a></p>
+
+<h4 id="youtube-embed">YouTube embed</h4>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ &lt; youtube hjD9jTi_DQ4 &gt;}
+</code></pre></div></div>
+
+<figure>
+
+  
+
+  <!-- Added center option -->
+  <iframe src="https://www.youtube.com/embed/hjD9jTi_DQ4" style="display: block; margin: 0 auto;" class="img-fluid rounded z-depth-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="auto" height="auto"></iframe>
+
+  
+
+</figure>
+
+<p>The YouTube embed looks a lot better in PaperMod than it does in al-folio.</p>
+
+<p><a href="https://gohugo.io/content-management/shortcodes/#youtube" rel="external nofollow noopener" target="_blank">Hugo documentation</a></p>
+
+<h4 id="github-gist">GitHub gist</h4>
+
+<p>See <a href="https://gohugo.io/content-management/shortcodes/#figure" rel="external nofollow noopener" target="_blank">Hugo documentation</a>.</p>
+
+<h3 id="deploy">Deploy</h3>
+
+<p>Resource 2 describes how to deploy a Hugo site to Netlify. Here’s a <a href="https://youtu.be/hjD9jTi_DQ4?t=2230" rel="external nofollow noopener" target="_blank">timestamp</a> for that portion of the video.</p>
+
+<p>The build process is incredibly simple. In the video, the only command you input for the build process is <code class="language-plaintext highlighter-rouge">hugo</code>.</p>
+
+<p>My build process involves slightly more than just <code class="language-plaintext highlighter-rouge">hugo</code> since I also have to build PaperMod_diff <sup id="fnref:10:1"><a href="#fn:10" class="footnote" rel="footnote" role="doc-noteref">6</a></sup>. So, I use <a href="https://github.com/jesse-wei/jessewei.dev-PaperMod/blob/main/scripts/netlify" rel="external nofollow noopener" target="_blank">scripts/netlify</a>. My build command in Site settings &gt; Build &amp; deploy &gt; Build command is <code class="language-plaintext highlighter-rouge">chmod +x scripts/netlify;./scripts/netlify</code>.</p>
+
+<p>You can ignore that unless you also want to set up a PaperMod_diff page.</p>
+
+<h4 id="al-folio-comparison">al-folio comparison</h4>
+
+<p>al-folio deployment is easier because it already includes a GH action for deploying to GH pages. You just need to name your repo {your GH username}.github.io and follow some other steps in the README.</p>
+
+<p>However, deploying the site locally on an M1 MacBook was a huge pain in the ass. For some reason, deploying via Docker wasn’t working, which is super weird. Then Ruby and Jekyll installation was not straightforward. I eventually got local deployment to work after following this YouTube video.</p>
+
+<figure>
+
+  
+
+  <!-- Added center option -->
+  <iframe src="https://www.youtube.com/embed/UKB9ylw0G4U" style="display: block; margin: 0 auto;" class="img-fluid rounded z-depth-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="auto" height="auto"></iframe>
+
+  
+
+</figure>
+
+<h2 id="my-website">My website</h2>
+
+<p>Now I’ll describe specific features of my website.</p>
+
+<h3 id="configyml-1">config.yml</h3>
+
+<p>The latest version of my <code class="language-plaintext highlighter-rouge">config.yml</code> is <a href="https://github.com/jesse-wei/jessewei.dev-PaperMod/blob/main/config.yml" rel="external nofollow noopener" target="_blank">here</a>.</p>
+
+<p>I think I use reasonable values, and I use comments to explain decisions I consider non-obvious. I’ll explain some specific decisions I made in this file in the below sections as they come up.</p>
+
+<h4 id="al-folio-comparison-1">al-folio comparison</h4>
+
+<p>I was very confused by the meanings of several parameters in PaperMod’s <code class="language-plaintext highlighter-rouge">config.yml</code> and had to read PaperMod’s documentation about several parameters. Plus, there are some super weird things that I had to modify. For example, my <code class="language-plaintext highlighter-rouge">/teaching</code> page had the page title <code class="language-plaintext highlighter-rouge">Teachings</code> even though the URL was <code class="language-plaintext highlighter-rouge">"teaching"</code>, which was super confusing. After Googling, it turns out I had to set <code class="language-plaintext highlighter-rouge">pluralizeListTitles</code> to <code class="language-plaintext highlighter-rouge">false</code>, but this parameter doesn’t even exist in PaperMod’s base <code class="language-plaintext highlighter-rouge">config.yml</code>? In addition, this is obviously a feature that should be off by default, so I’m not sure why it’s enabled by default.</p>
+
+<p>al-folio’s <code class="language-plaintext highlighter-rouge">config.yml</code> is commented super well, and I had no issues.</p>
+
+<h3 id="papermod-diff">PaperMod diff</h3>
+
+<p>I created PaperMod diff <sup id="fnref:10:2"><a href="#fn:10" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> using the scripts in <a href="https://github.com/jesse-wei/jessewei.dev-PaperMod/tree/main/scripts" rel="external nofollow noopener" target="_blank">scripts/</a>. <code class="language-plaintext highlighter-rouge">diff.py</code> runs <code class="language-plaintext highlighter-rouge">diff</code> between corresponding files, <code class="language-plaintext highlighter-rouge">helpers/generate_directory_index_caddystyle.py</code> creates <code class="language-plaintext highlighter-rouge">index.html</code> files recursively, and <code class="language-plaintext highlighter-rouge">build</code> wraps <code class="language-plaintext highlighter-rouge">diff.py</code> to deploy its output to Netlify (see <a href="#deploy">Deploy</a>). <code class="language-plaintext highlighter-rouge">helpers/cd.py</code> is also used.</p>
+
+<p>Do note that <code class="language-plaintext highlighter-rouge">content/posts/papermod_diff</code> is <a href="https://github.com/jesse-wei/jessewei.dev-PaperMod/blob/main/.gitignore" rel="external nofollow noopener" target="_blank">gitignored</a>. This is because if it weren’t, then the content there would change and be shown on GitHub every time I modify <code class="language-plaintext highlighter-rouge">assets/</code> and/or <code class="language-plaintext highlighter-rouge">layouts/</code>, which is redundant and would make the commit history harder to read. My solution (gitignore the folder and generate it during the build process in Netlify) is a bit roundabout, but it’s already implemented and works well.</p>
+
+<h3 id="content-1">Content</h3>
+
+<p>This section is a continuation of <a href="#specifying-layout-of-a-page">Specifying layout of a page</a>.</p>
+
+<p>Let’s look more closely at the structure of <code class="language-plaintext highlighter-rouge">content/teaching</code>, which is a list layout.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>content/teaching
+├── act               List layout within list layout
+│   ├── _index.md     Note, _index.md, not index.md!
+│   ├── binary
+│   ├── desmos
+│   ├── eulers_formula
+│   ├── ...
+├── comp110
+│   ├── img
+│   └── index.md
+├── comp210
+│   ├── img
+│   └── index.md
+└── comp311
+    ├── img
+    ├── index.md
+    └── review
+</code></pre></div></div>
+
+<p>My <a href="https://cheerful-mousse-b9d87b.netlify.app/teaching/" rel="external nofollow noopener" target="_blank">Teaching</a> page has a list layout because <code class="language-plaintext highlighter-rouge">teaching/</code> doesn’t have an <code class="language-plaintext highlighter-rouge">index.md</code>. The <code class="language-plaintext highlighter-rouge">comp110/</code> directory is a single because it has an <code class="language-plaintext highlighter-rouge">index.md</code>. It’s accessible by <a href="https://cheerful-mousse-b9d87b.netlify.app/teaching/comp110" rel="external nofollow noopener" target="_blank">/teaching/comp110</a>. It also contains an <code class="language-plaintext highlighter-rouge">img/</code> directory that’s accessible from <code class="language-plaintext highlighter-rouge">index.md</code>. The images could go in <code class="language-plaintext highlighter-rouge">/static/</code>, but I prefer bundling them with the page.</p>
+
+<p>It’s possible to have a list layout within a list layout, and <a href="https://cheerful-mousse-b9d87b.netlify.app/teaching/act" rel="external nofollow noopener" target="_blank">/teaching/act</a> is an example. However, notice <code class="language-plaintext highlighter-rouge">act/</code> must have an <code class="language-plaintext highlighter-rouge">_index.md</code> file (note the underscore) since it’s a non-leaf.</p>
+
+<p>See <a href="https://gohugo.io/content-management/page-bundles/" rel="external nofollow noopener" target="_blank">Page Bundles</a> for more details.</p>
+
+<h4 id="al-folio-comparison-2">al-folio comparison</h4>
+
+<p>Honestly, this was (and still is) a bit confusing to me. I can see how it is more organized, but I don’t see why it’s necessary.</p>
+
+<p>al-folio’s directory structure feels just like that of a raw HTML and CSS website and was much easier to get used to.</p>
+
+<h3 id="latex">\(\LaTeX{}\)</h3>
+
+<p>I enabled \(\LaTeX{}\) via <a href="https://katex.org/" rel="external nofollow noopener" target="_blank">KaTeX</a> in <code class="language-plaintext highlighter-rouge">layouts/partials/extend_head.html</code>.</p>
+
+<p>I followed <a href="https://adityatelange.github.io/hugo-PaperMod/posts/math-typesetting/" rel="external nofollow noopener" target="_blank">Math Typesetting</a> from PaperMod documentation. Specifically, the code in <code class="language-plaintext highlighter-rouge">extend_head.html</code> is mostly from <a href="https://github.com/adityatelange/hugo-PaperMod/issues/236#issuecomment-778936434" rel="external nofollow noopener" target="_blank">Issue #236</a>.</p>
+
+<p>I modified the condition for loading the KaTeX script. The site param <code class="language-plaintext highlighter-rouge">math</code> must be true. Then KaTeX will be loaded by default in all pages. Setting the local param <code class="language-plaintext highlighter-rouge">math</code> to <code class="language-plaintext highlighter-rouge">false</code> in front matter will cause that page to not load KaTeX.</p>
+
+<p>I think having to opt-in is super annoying, so I’d rather enable it globally and be able to opt-out.</p>
+
+<h4 id="al-folio-comparison-3">al-folio comparison</h4>
+
+<p>al-folio uses MathJax by default. As shown <a href="http://www.intmath.com/cg5/katex-mathjax-comparison.php" rel="external nofollow noopener" target="_blank">here</a>, MathJax is on par or faster than KaTeX. In my experience, MathJax is also less restrictive.</p>
+
+<h3 id="comments">Comments</h3>
+
+<p>I enabled comments using <a href="https://giscus.app" rel="external nofollow noopener" target="_blank">giscus</a>.</p>
+
+<p>I followed the directions on the giscus site to install giscus in my repo and pasted code from the giscus website into <code class="language-plaintext highlighter-rouge">layouts/partials/comments.html</code>. I also added <code class="language-plaintext highlighter-rouge">comments: true</code> to config.</p>
+
+<p>As you can see, there are comments at the bottom of almost every page. PaperMod automatically disables comments in the index profile, search, and archives layouts. I manually disabled comments in my <a href="https://cheerful-mousse-b9d87b.netlify.app/privacy/" rel="external nofollow noopener" target="_blank">Privacy policy</a> page in the front matter with <code class="language-plaintext highlighter-rouge">comments: false</code>.</p>
+
+<p>Comments show up in <a href="https://github.com/jesse-wei/jessewei.dev-PaperMod/discussions" rel="external nofollow noopener" target="_blank">GitHub Discussions</a>. Make sure to <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository#" rel="external nofollow noopener" target="_blank">enable Discussions</a> in your GitHub repo.</p>
+
+<p>However, the comment box does not automatically change color on theme toggle if all you do is add the script. I found an implementation online for it, and it’s in <code class="language-plaintext highlighter-rouge">layouts/partials/comments.html</code>.</p>
+
+<h4 id="al-folio-comparison-4">al-folio comparison</h4>
+
+<p>al-folio implements giscus (and Disqus, deprecated) by default. The only change needed is some configuration in <code class="language-plaintext highlighter-rouge">config.yml</code>. In addition, the comment box automatically toggles color when the theme is toggled.</p>
+
+<h3 id="social-icons-in-footer">Social icons in footer</h3>
+
+<p>I added social icons to the footer, as in resource <sup id="fnref:4:1"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup>. I sort of follow what it describes but make some of my own adjustments.</p>
+
+<p>As described there, adding social icons to footer messes with CSS spacing values. For example, a scrollbar appeared on the homepage and Search page (haven’t solved this and don’t plan to) even though there’s enough room for both header and footer to be visible without scrolling. This issue is described more in-depth in resource <sup id="fnref:4:2"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup>, under problem 2.</p>
+
+<p>In short, I modified CSS in 4 files. <code class="language-plaintext highlighter-rouge">layouts/partials/footer.html</code>, <code class="language-plaintext highlighter-rouge">layouts/partials/social_icons.html</code>, <code class="language-plaintext highlighter-rouge">assets/css/core/theme-vars.css</code>, and <code class="language-plaintext highlighter-rouge">assets/css/common/profile-mode.css</code>. The comments in each file describe the changes I made. Most comments in <code class="language-plaintext highlighter-rouge">social_icons.html</code> are for htmltest, described <a href="#ci">below</a>, so ignore those for now.</p>
+
+<p>I disabled footer social icons on the homepage because the homepage already has social icons.</p>
+
+<h4 id="al-folio-comparison-5">al-folio comparison</h4>
+
+<p>I didn’t bother with this since al-folio puts social icons in the footer of the homepage by default. That’s fine with me.</p>
+
+<h3 id="other-footer-changes">Other footer changes</h3>
+
+<p>Beyond that, I made some other minor changes to the footer.</p>
+
+<p>I added the separator character • between phrases in the footer.</p>
+
+<p>The links were originally like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Powered by
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://gohugo.io/"</span> <span class="na">rel=</span><span class="s">"noopener noreferrer"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>Hugo<span class="nt">&lt;/a&gt;</span> <span class="err">&amp;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/adityatelange/hugo-PaperMod/"</span> <span class="na">rel=</span><span class="s">"noopener"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>PaperMod<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>I removed <code class="language-plaintext highlighter-rouge">target=_blank</code> and <code class="language-plaintext highlighter-rouge">rel="noopener noreferrer"</code> because <a href="https://www.w3.org/TR/WCAG20-TECHS/G200.html" rel="external nofollow noopener" target="_blank">links should not usually open new tabs</a>.</p>
+
+<p>I added a privacy policy page and a link to it in the footer.</p>
+
+<p>Lastly, I removed “Powered by Hugo and PaperMod” in the homepage specifically to keep it minimal.</p>
+
+<h4 id="al-folio-comparison-6">al-folio comparison</h4>
+
+<p>It’s much easier to change the text of the al-folio footer because you need only edit <code class="language-plaintext highlighter-rouge">config.yml</code>.</p>
+
+<p>However, it seems that all external links open in new tabs in al-folio. Personally, I don’t like that, but I get that the purpose is to get the user to stay on your site. It’s fine with me since the behavior is consistent, but I might end up changing this.</p>
+
+<h3 id="single-1">Single</h3>
+
+<p>I slightly modified <code class="language-plaintext highlighter-rouge">layouts/_default/single.html</code>. I moved the ToC above the cover. Notice on this page that the ToC is above the cover image.</p>
+
+<h3 id="links-are-carolina-blue-on-hover">Links are Carolina blue on hover</h3>
+
+<p>This was just basic CSS.</p>
+
+<p>I modified CSS in the following CSS files in <code class="language-plaintext highlighter-rouge">assets/css/common/</code>: <code class="language-plaintext highlighter-rouge">archive</code>, <code class="language-plaintext highlighter-rouge">footer</code>, <code class="language-plaintext highlighter-rouge">header</code>, <code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">post-entry</code>, and <code class="language-plaintext highlighter-rouge">post-single</code>.</p>
+
+<p>For example, <code class="language-plaintext highlighter-rouge">main.css</code> has these important lines:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Change color on hover */</span>
+<span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--carolina_blue</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="nc">.anchor</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--carolina_blue</span><span class="p">)</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">svg</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--carolina_blue</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For modifications, look for comments and the variable <code class="language-plaintext highlighter-rouge">carolina_blue</code>. Check PaperMod diff.</p>
+
+<p>Since I made links blue on hover, I removed underline on hover (the link is still underlined if it had an underline before hovering though).</p>
+
+<h4 id="al-folio-comparison-7">al-folio comparison</h4>
+
+<p>al-folio colors links and underlines on hover by default. All I did was change the theme colors to UNC blue in <code class="language-plaintext highlighter-rouge">_sass/_variables.scss</code> and <code class="language-plaintext highlighter-rouge">_sass/_themes.scss</code>.</p>
+
+<h3 id="syntax-highlighting-via-chroma">Syntax highlighting via Chroma</h3>
+
+<p>I disabled <a href="https://highlightjs.org" rel="external nofollow noopener" target="_blank">highlight.js</a> (default) and enabled Hugo Chroma following the <a href="https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-faq/#using-hugos-syntax-highlighter-chroma" rel="external nofollow noopener" target="_blank">steps in PaperMod documentation</a>. This required a few changes in <code class="language-plaintext highlighter-rouge">config.yml</code> and <code class="language-plaintext highlighter-rouge">assets/css/extended/*.css</code>.</p>
+
+<p>I disabled line numbers by default in <code class="language-plaintext highlighter-rouge">config.yml</code> for readability. Most code blocks you’ve seen so far have not had line numbers.</p>
+
+<p>However, you can enable line numbers for a specific code block, as shown in the <a href="#baseof">baseof</a> code block, by adding <code class="language-plaintext highlighter-rouge">{lineNos=true}</code> to the code block. <sup id="fnref:7"><a href="#fn:7" class="footnote" rel="footnote" role="doc-noteref">8</a></sup></p>
+
+<p>It was very easy to install just one Chroma theme. However, I also wanted the code theme to toggle when the theme toggles. This should’ve been decently easy because all I had to do was a second stylesheet with a dark code theme and add <code class="language-plaintext highlighter-rouge">.dark</code> to the class names. However, I ran into a lot of issues with the light theme CSS overriding the dark theme CSS for most combinations of themes. It could’ve been a fault in my implementation, but without changing anything, the specific combination of pygments (light) and dracula (dark) didn’t have any issues, so I’m not sure what was going on.</p>
+
+<p>Plus, there’s a second issue. Line numbers on code blocks look weird.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/papermod/code_line_nos-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/papermod/code_line_nos-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/papermod/code_line_nos-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/papermod/code_line_nos.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" alt="Line numbers on code blocks look weird" title="Line numbers on code blocks look weird" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<div class="caption">Line numbers rectangle has a rounded edge by <code>DOCTYPE</code> and /body</div>
+
+<h4 id="al-folio-comparison-8">al-folio comparison</h4>
+
+<p>Everything works well by default! I changed <code class="language-plaintext highlighter-rouge">$code-bg-color-light</code> in <code class="language-plaintext highlighter-rouge">sass/_variables.scss</code>, but I think that’s it.</p>
+
+<p>However, Hugo’s code syntax highlighter supports <code class="language-plaintext highlighter-rouge">go-html-template</code> (I just specify <code class="language-plaintext highlighter-rouge">html</code> or <code class="language-plaintext highlighter-rouge">text</code> in this post) and <code class="language-plaintext highlighter-rouge">arduino</code>, whereas Jekyll’s doesn’t. In addition, in PaperMod, I didn’t have to convert double braces to single braces inside code blocks like I had to do in this post.</p>
+
+<h3 id="table-of-contents">Table of Contents</h3>
+
+<p>This one is quite important to me but is horrible to implement on PaperMod.</p>
+
+<p>On this post, notice the ToC on the side (if your screen is wide enough) that automatically changes color to show you where you are in the post. In addition, since there’s not enough room to show all the headings, it only shows all the top-level headings and expands the lower-level headings of the heading you’re currently on. I think this is a very good feature for organization too since you don’t get much out of seeing lower-level headings if you’re not reading that section.</p>
+
+<p>There’s a <a href="https://reorx.github.io/hugo-PaperModX/docs/papermodx-new-features/" rel="external nofollow noopener" target="_blank">fork</a> of PaperMod called PaperModX that roughly implements this. However, it is not a good implementation, and that’s the best implementation I found (compared to two others in a PaperMod PR and a PaperMod issue). That implementation will show all headings and will display a scrollbar (such as on this page in my PaperMod website) if there are too many headings. It does highlight the active heading, but if there’s a scrollbar, then it won’t scroll down when you get to the bottom, and the active element feature will then break completely. <a href="https://github.com/jesse-wei/jessewei.dev-PaperMod/issues/25" rel="external nofollow noopener" target="_blank">GH issue with more information</a>.</p>
+
+<p>If you’re somehow still interested in implementing this feature in PaperMod, then the relevant code is in <code class="language-plaintext highlighter-rouge">assets/css/common/post-single.css</code> (for putting the ToC on the side and hiding it on small screens), <code class="language-plaintext highlighter-rouge">layouts/partials/footer.html</code> (for a short script - I’m not sure what it does), and <code class="language-plaintext highlighter-rouge">layouts/partials/toc.html</code> (adds a few classes to the <code class="language-plaintext highlighter-rouge">toc</code> div and the script for scrolling and keeping track of the active ToC element). Check PaperMod diff <sup id="fnref:10:3"><a href="#fn:10" class="footnote" rel="footnote" role="doc-noteref">6</a></sup>.</p>
+
+<h4 id="al-folio-comparison-9">al-folio comparison</h4>
+
+<p>The Bootstrap ToC plugin just works! See the <a href="https://alshedivat.github.io/al-folio/blog/2023/sidebar-table-of-contents/" rel="external nofollow noopener" target="_blank">documentation</a>.</p>
+
+<p>The only thing I would change is that on small screens, the side ToC (if enabled) disappears, and there’s nothing to replace it. In the implementation described above, if there’s not a side ToC, then the ToC is at the top of the post (as in normal PaperMod).</p>
+
+<p>I did check what happens with the Bootstrap ToC when there are enough headings to fill the screen by resizing my window. There is no scrollbar, and the ToC just overflows the screen and is cut off. However, realistically speaking, this should never occur, and even if it does, the top-level headings will still be shown.</p>
+
+<h3 id="hamburgerresponsive-menu">Hamburger/responsive menu</h3>
+
+<p>There should be a hamburger menu for small screens. Several people asked for an implementation of this, but Aditya refuses to merge the change. What’s funny is he implemented it himself and sent the relevant code in Discord but chooses not to merge it into the repo…?</p>
+
+<p>Here’s the relevant <a href="https://github.com/adityatelange/hugo-PaperMod/discussions/943" rel="external nofollow noopener" target="_blank">GH issue</a>.</p>
+
+<h4 id="al-folio-comparison-10">al-folio comparison</h4>
+
+<p>You’ll never guess…</p>
+
+<p>al-folio supports this by default. In addition, al-folio also supports dropdown menus and allows you to choose between sticky and fixed header and footer.</p>
+
+<h3 id="miscellaneous-bugs-and-shortcomings">Miscellaneous bugs and shortcomings</h3>
+
+<h4 id="papermod">PaperMod</h4>
+
+<p>The scrollbar is bugged on Safari. <a href="https://github.com/jesse-wei/jessewei.dev-PaperMod/issues/22" rel="external nofollow noopener" target="_blank">More information and a fix</a>. This is a problem with the original theme.</p>
+
+<p>Link underlines either disappear or turn the wrong color on theme toggle. <a href="https://github.com/jesse-wei/jessewei.dev-PaperMod/issues/23" rel="external nofollow noopener" target="_blank">More information</a>, and I have not found a solution for this. This is a problem on PaperMod’s site too.</p>
+
+<p>This isn’t really a bug, but in PaperMod, if you use a footnote more than once, then the footnote at the bottom of the post will just specify ↩ ↩ ↩ …, one arrow for each footnote reference. However, al-folio specifies ↩ ↩2 ↩3 …</p>
+
+<h4 id="al-folio">al-folio</h4>
+
+<p>Have found only one bug! So far… 🤞</p>
+
+<p>On the sidebar ToC, at least with a sticky navbar, if you click a heading, then the page will scroll such that the heading is at the top of the page, and the navbar above that. However, the active ToC element probably won’t be the heading you clicked on because the sticky navbar above takes up some space, so the script thinks the active element is the heading above the one you clicked on.</p>
+
+<p>This isn’t a bug, but I would like it if the side ToC ignores the automatically-generated heading “Enjoy Reading This Article?”</p>
+
+<h3 id="google-analytics">Google Analytics</h3>
+
+<p>For Google Analytics, just add your Google Analytics tag to <code class="language-plaintext highlighter-rouge">googleAnalytics</code> in the config. For example, mine has <code class="language-plaintext highlighter-rouge">googleAnalytics: G-Q603T56FWT</code>.</p>
+
+<p>PaperMod automatically uses the Google Analytics script if <code class="language-plaintext highlighter-rouge">env</code> is <code class="language-plaintext highlighter-rouge">production</code> (default). See the bottom of <code class="language-plaintext highlighter-rouge">layouts/partials/head.html</code>:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{- /* Misc */}
+{- if hugo.IsProduction | or (eq site.Params.env "production") }
+{- template "_internal/google_analytics.html" . }
+{- template "partials/templates/opengraph.html" . }
+{- template "partials/templates/twitter_cards.html" . }
+{- template "partials/templates/schema_json.html" . }
+{- end -}
+</code></pre></div></div>
+
+<h4 id="al-folio-comparison-11">al-folio comparison</h4>
+
+<p>al-folio also has Google Analytics by default.</p>
+
+<h3 id="ci">CI</h3>
+
+<p>I added a GH workflow for checking links in my site and spellcheck. This is not directly related to PaperMod and al-folio.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/papermod/htmltest-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/papermod/htmltest-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/papermod/htmltest-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/papermod/htmltest.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" alt="htmltest GH Action output" title="htmltest GH Action output" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<div class="caption">htmltest GH Action output</div>
+
+<p>See <code class="language-plaintext highlighter-rouge">.github/workflows/ci.yml</code> and its configuration file <code class="language-plaintext highlighter-rouge">.github/.htmltest.yml</code>. This follows resource <sup id="fnref:5:1"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup>, with some modifications. In particular, I want to note that I run my <code class="language-plaintext highlighter-rouge">scripts/build</code> in <code class="language-plaintext highlighter-rouge">ci.yml</code> instead of just <code class="language-plaintext highlighter-rouge">hugo</code>, as in the original file.</p>
+
+<h4 id="behavior">Behavior</h4>
+
+<p>Here is the intended behavior of the htmltest job after making the modifications below.</p>
+
+<p>If an internal link (e.g., a page or image) doesn’t work, the workflow will fail, causing a red X to appear on GH Actions.</p>
+
+<p>If an external link doesn’t work, htmltest will warn, but the workflow will not fail. That is, an external link could be “broken,” and a green checkmark will be shown on GH Actions. This is fine because when using a lot of external links, it’s unlikely that all will work in any single run. There could be a timeout or non-200 HTML response code, etc.. Getting a red X when just a single external link breaks is annoying. htmltest does still warn, so I manually check GH actions every now and then.</p>
+
+<h4 id="getting-rid-of-garbage-output">Getting rid of garbage output</h4>
+
+<p>There was originally &gt;100 lines of garbage output. htmltest complained that the site logo’s link at the top left had no alt text, and my LinkedIn link in social icons in the footer returned non-OK exit status 999. Since the header and footer are in all pages, this caused a lot of errors, which made the output unreadable.</p>
+
+<p>I fixed this in <code class="language-plaintext highlighter-rouge">layouts/partials/header.html</code> by adding non-empty alt text to the logo and in <code class="language-plaintext highlighter-rouge">layouts/partials/social_icons.html</code> by excluding the LinkedIn link from htmltest using the <code class="language-plaintext highlighter-rouge">data-proofer-ignore</code> attribute, as specified in <a href="https://github.com/wjdp/htmltest#see_no_evil-ignoring-content" rel="external nofollow noopener" target="_blank">htmltest’s README</a>.</p>
+
+<p>The top 3 links are ones I want to keep even though they don’t actually work. So I manually ignored them in the post (not <code class="language-plaintext highlighter-rouge">layouts/</code>) using the <code class="language-plaintext highlighter-rouge">data-proofer-ignore</code> attribute in rawhtml. <sup id="fnref:8"><a href="#fn:8" class="footnote" rel="footnote" role="doc-noteref">9</a></sup></p>
+
+<p>And the <code class="language-plaintext highlighter-rouge">#center</code> thing is how you can <a href="https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-faq/#centering-image-in-markdown" rel="external nofollow noopener" target="_blank">center an image in Markdown syntax in PaperMod</a>. <code class="language-plaintext highlighter-rouge">#center</code> also gets appended to an image URL if you use <code class="language-plaintext highlighter-rouge">align="center"</code> in figure shortcode. But since this causes htmltest to freak out, I added this to <code class="language-plaintext highlighter-rouge">.htmltest.yml</code>:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">IgnoreURLs</span><span class="pi">:</span>
+  <span class="c1"># Ignore &lt;img src="*#center"&gt; for centered images in PaperMod, which would cause "hash not found"</span>
+  <span class="c1"># This is suboptimal because we ideally want to check the image URL without the #center suffix</span>
+
+  <span class="c1"># Match internal image path ending in #center</span>
+  <span class="pi">-</span> <span class="s">.*\.(apng|gif|ico|cur|jpg|jpeg|jfif|pjpeg|pjp|png|svg)#center$$</span>
+  <span class="c1"># Match external image URL ending in #center</span>
+  <span class="pi">-</span> <span class="s">(https://|http://|www\.).*\.[A-Za-z]+#center$$</span>
+</code></pre></div></div>
+
+<p>As you can tell by the comments, this is suboptimal and can lead to false negatives. I can think of two solutions.</p>
+
+<ol>
+  <li>Modify htmltest to ignore specific hashes but check the rest of the URL <sup id="fnref:9"><a href="#fn:9" class="footnote" rel="footnote" role="doc-noteref">10</a></sup>
+</li>
+  <li>Modify PaperMod to center the image without appending <code class="language-plaintext highlighter-rouge">#center</code>
+</li>
+</ol>
+
+<h4 id="make-gh-actions-display-red-x-on-failure">Make GH Actions display red X on failure</h4>
+
+<p>Instead of <code class="language-plaintext highlighter-rouge">continue-on-error: true</code> from resource <sup id="fnref:5:2"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup>, I use <code class="language-plaintext highlighter-rouge">if: always()</code>.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Test HTML</span>
+  <span class="c1"># https://github.com/wjdp/htmltest-action/</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">wjdp/htmltest-action@master</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">config</span><span class="pi">:</span> <span class="s">./.github/.htmltest.yml</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Archive htmltest results</span>
+  <span class="c1"># Archive result even if Test HTML fails</span>
+  <span class="c1"># Use if: always() instead of continue-on-error, as in the original file</span>
+  <span class="c1"># Source: https://stackoverflow.com/questions/62045967/github-actions-is-there-a-way-to-continue-on-error-while-still-getting-correct</span>
+  <span class="na">if</span><span class="pi">:</span> <span class="s">always()</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">if: always()</code> will cause logging to occur even if Test HTML fails. <code class="language-plaintext highlighter-rouge">continue-on-error: true</code> does the same. However, <code class="language-plaintext highlighter-rouge">continue-on-error: true</code> would cause GH Actions to display a green checkmark when Test HTML fails, which is misleading.</p>
+
+<h4 id="ignoreexternalbrokenlinks">IgnoreExternalBrokenLinks</h4>
+
+<p>I added this to <code class="language-plaintext highlighter-rouge">.htmltest.yml</code>:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This does not "ignore" the broken links, but it does not fail the action</span>
+<span class="c1"># From the htmltest README:</span>
+<span class="c1"># When true produces a warning, rather than an error, for broken external links.</span>
+<span class="na">IgnoreExternalBrokenLinks</span><span class="pi">:</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p>With a lot of external links, it’s unlikely that all external links will work during any one run. Maybe there’ll be a timeout or bad HTML response code, etc.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>There are definitely some other modifications I made to PaperMod that I didn’t describe here, but these are the major points.</p>
+
+<p>I think this post pretty much confirms 100% that, at the moment, Jekyll + al-folio is better than Hugo + PaperMod. Looking into the future, however, Hugo is growing a lot faster than Jekyll is (and imho, it overall does feel better than Jekyll). I can’t be sure if I made an optimal long-term choice, but al-folio is really dang good, and I don’t think I’ll have to completely refactor my website again any time soon.</p>
+
+<p>If you’re using PaperMod, then I hope this post makes it easy for you add some of the necessary features. However, whether you’re using PaperMod or deciding whether to use it or anything else, I hope you consider al-folio!</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://gohugo.io/getting-started/quick-start" rel="external nofollow noopener" target="_blank">Hugo Quick Start</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">↩<sup>2</sup></a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="https://www.youtube.com/watch?v=hjD9jTi_DQ4" rel="external nofollow noopener" target="_blank">Getting Started With Hugo</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">↩</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">↩<sup>2</sup></a></p>
+    </li>
+    <li id="fn:3">
+      <p><a href="https://adityatelange.github.io/hugo-PaperMod/" rel="external nofollow noopener" target="_blank">PaperMod demo site/documentation</a> and its <a href="https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite" rel="external nofollow noopener" target="_blank">source</a> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+    <li id="fn:4">
+      <p><a href="https://github.com/KwnyPwny/hugo-blog/tree/main/layouts/shortcodes" rel="external nofollow noopener" target="_blank">Konstantin’s How to Set Up This Blog</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">↩</a> <a href="#fnref:4:1" class="reversefootnote" role="doc-backlink">↩<sup>2</sup></a> <a href="#fnref:4:2" class="reversefootnote" role="doc-backlink">↩<sup>3</sup></a></p>
+    </li>
+    <li id="fn:5">
+      <p><a href="https://robb.sh/posts/check-links-in-hugo-with-htmltest/" rel="external nofollow noopener" target="_blank">Check links in Hugo with htmltest</a> <a href="#fnref:5" class="reversefootnote" role="doc-backlink">↩</a> <a href="#fnref:5:1" class="reversefootnote" role="doc-backlink">↩<sup>2</sup></a> <a href="#fnref:5:2" class="reversefootnote" role="doc-backlink">↩<sup>3</sup></a></p>
+    </li>
+    <li id="fn:10">
+      <p><a href="https://main--cheerful-mousse-b9d87b.netlify.app/posts/papermod_diff/" rel="external nofollow noopener" target="_blank">PaperMod_diff</a> <a href="#fnref:10" class="reversefootnote" role="doc-backlink">↩</a> <a href="#fnref:10:1" class="reversefootnote" role="doc-backlink">↩<sup>2</sup></a> <a href="#fnref:10:2" class="reversefootnote" role="doc-backlink">↩<sup>3</sup></a> <a href="#fnref:10:3" class="reversefootnote" role="doc-backlink">↩<sup>4</sup></a></p>
+    </li>
+    <li id="fn:6">
+      <p>I assume you already do, surely. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+    <li id="fn:7">
+      <p>You might also be able to enable it by default in a specific post by adding it to front matter, but this didn’t work for me. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+    <li id="fn:8">
+      <p>TODO: Create shortcode for a link with <code class="language-plaintext highlighter-rouge">data-proofer-ignore</code> attribute. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+    <li id="fn:9">
+      <p>This would ignore any URL with <code class="language-plaintext highlighter-rouge">#center</code> suffix, not just image URLs. <a href="#fnref:9" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+    </div>
+  </article>
+
+
+  
+    
+    <br>
+    <hr>
+    <br>
+    <ul class="list-disc pl-8"></ul>
+
+    <!-- Adds related posts to the end of an article -->
+    <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
+    <p class="mb-2">Here are some more articles you might like to read next:</p>
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/advanced-math-act/">Advanced Math Concepts for the ACT®</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/guide-to-act/">Guide to the ACT®</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/sin-cos/">Symmetries between sine and cosine</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/tutoring-notes/">Tutoring notes for the ACT®</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/pascals-triangle/">Pascal's triangle</a>
+  </li>
+
+<div id="giscus_thread" style="max-width: 800px; margin: 0 auto;">
+  <script>
+    let giscusTheme = localStorage.getItem("theme");
+    let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "jesse-wei/jesse-wei.github.io",
+        "data-repo-id": "R_kgDOJnPCgQ",
+        "data-category": "Comments",
+        "data-category-id": "DIC_kwDOJnPCgc4CWuRs",
+        "data-mapping": "title",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "bottom",
+        "data-theme": giscusTheme,
+        "data-lang": "en",
+        "crossorigin": "anonymous",
+        "async": "",
+    };
+
+
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById("giscus_thread").appendChild(giscusScript);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a>
+</noscript>
+</div>
+</div>
+
+          </div>
+        </div>
+        
+      
+    </div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5">
+      <div class="container" style="text-align: center;">
+        © 2026 Jesse Wei • Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> and <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> • <a href="/privacy-policy">Privacy policy</a>
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Enable Tooltips -->
+  <script type="text/javascript">
+  $(function () {$('[data-toggle="tooltip"]').tooltip()})
+  </script>
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+  <!-- Bootstrap Table -->
+  <script defer src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
+
+  <!-- Load Common JS -->
+  <script src="/assets/js/no_defer.js"></script>
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q603T56FWT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Q603T56FWT');
+  </script>
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accommodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": navbarHeight });
+    $("progress-container").css({ "padding-top": navbarHeight });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+</html>
