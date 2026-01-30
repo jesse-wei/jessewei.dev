@@ -1,0 +1,3 @@
+[codespell]
+skip=*.pdf,*.svg,*.js,*.js.map,assets/plotly/demo.html
+ignore-words-list=tht,oll,nd,pll,rouge
