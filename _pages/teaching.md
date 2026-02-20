@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: I am a graduate TA for COMP 311 and was a UTA for COMP 311, 210, and 110. I am one of two awardees of the 2023 Diane Pozefsky Learning Assistant Award ($1000 prize).
+description: I am one of two awardees of the 2023 Diane Pozefsky Learning Assistant Award.
 nav: true
 nav_order: 5
 giscus_comments: true
@@ -29,7 +29,7 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I roughly <strong>doubled</strong> the potential audience of COMP 541's final project simulator (speeds up build time from several minutes to seconds) by porting, along with a classmate, the original version (Windows-only) to Java (cross-platform). It is in-use in COMP 541 and maintained by me.
+            <strong>Doubled</strong> the user base of <a href="https://comp541.web.unc.edu/">COMP 541</a>'s final project simulator by porting the original Windows-only version to Java (cross-platform). It is in-use in COMP 541 and is maintained by me.
           </div>
           <div class="col-sm-3">
             <a href="/projects/mips-emulator">MIPS Emulator</a>&nbsp;(<a href="https://github.com/madiali/mips-emulator">GitHub</a>)
@@ -46,7 +46,7 @@ giscus_comments: true
     <div class="row">
       <div class="col-sm-10">
         <h5 id="comp311" class="card-title">Computer Organization</h5>
-        <h6 class="card-subtitle font-italic">Graduate TA (F23), Head UTA (S23, F22)</h6>
+        <h6 class="card-subtitle font-italic">Co-instructor (S25), Graduate TA (F23), Head UTA (S23, F22)</h6>
       </div>
       <div class="col-sm-2 text-sm-right">
         <span class="badge">
@@ -58,7 +58,16 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I developed and maintain a SAP (Simple-As-Possible computer) program simulator, which allowed me to create a SAP programming assignment.
+            Delivered half of the lectures in S25 while maintaining my other responsibilities, which are shown below.
+          </div>
+          <div class="col-sm-3">
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm-9">
+            Developed a SAP (Simple-As-Possible computer) program simulator, which allowed me to create a SAP programming assignment.
           </div>
           <div class="col-sm-3">
             <a href="/projects/sapsim">SAPsim</a>&nbsp;(<a href="https://github.com/jesse-wei/SAPsim">GitHub</a>)
@@ -68,23 +77,22 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            <p>I create and refine programming assignments and their autograders.</p>
-            <p>I created Lab 4 (SAP programming), the majority of the final project (BST implementation in MIPS assembly), and revamped Lab 3 (ALU implementation).</p>
-            <p>Made several improvements to the other assignments.</p>
+            <p>Created and refined programming assignments.</p>
+            <p>In particular, I created assignments that involved building a MIPS computer, SAP programming, and BST implementation in MIPS assembly. Also revamped the ALU implementation assignment.</p>
           </div>
         </div>
       </li>
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            Refactored autograders to be more modular and extensible and provide better feedback to students.
+            Refactored autograder code to make it more modular and extensible and provide better feedback for students.
           </div>
         </div>
       </li>
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I have written 35+ in-use quiz and exam questions. I verify and edit, as needed, all assessment questions in the course. I wrote all of Quiz 7 (MIPS processor and control signals).
+            Wrote 60+ in-use quiz and exam questions. Verified and edited, as needed, all assessment questions and explanations for them. Wrote all of Quiz 7 (MIPS processor and control signals).
           </div>
           <div class="col-sm-3">
           </div>
@@ -93,16 +101,7 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I write and edit explanations for all assessment questions and 180+ practice questions.
-          </div>
-          <div class="col-sm-3">
-          </div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="row">
-          <div class="col-sm-9">
-            I manage the undergraduate LA team, hold office hours, answer student questions (on Piazza), and hold review sessions.
+            Managed the undergraduate LA team, held office hours, answered student questions (on Piazza), and held review sessions.
           </div>
           <div class="col-sm-3">
           </div>
@@ -117,8 +116,8 @@ giscus_comments: true
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 id="comp210" class="card-title"><a href="https://www.cs.unc.edu/~kakiryan/teaching/summer-210.html">Data Structures and Analysis</a></h5>
-        <h6 class="card-subtitle font-italic">Head UTA (Summer '22)</h6>
+        <h5 id="comp210" class="card-title"><a href="https://comp210ss2.github.io/">Data Structures and Analysis</a></h5>
+        <h6 class="card-subtitle font-italic">Instructor of record (Summer '24), Head UTA (Summer '22)</h6>
       </div>
       <div class="col-sm-2 text-sm-right">
         <span class="badge">
@@ -130,16 +129,17 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I created ~10 in-use quiz questions.
+            Taught the course in Summer '24.
           </div>
           <div class="col-sm-3">
+            <p><a href="https://comp210ss2.github.io">Course website</a></p>
           </div>
         </div>
       </li>
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I held 5 quiz review sessions.
+            As a UTA in Summer '22, I created ~10 quiz questions and held 5 quiz review sessions.
           </div>
           <div class="col-sm-3">
             <a href="https://docs.google.com/presentation/d/12e1sxpIHf1mICBM6xSjnnCluqbAZQcE1cxS9P-yykdk/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a> (recordings included)
@@ -168,7 +168,7 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I created a Git workshop for the COMP 110 hackathon Hack110.
+            Created a Git workshop for the COMP 110 hackathon Hack110.
           </div>
           <div class="col-sm-3">
             <a href="https://docs.google.com/presentation/d/1EHSeRvvkmLQSM9iJL0GyXE-p_i4bnn7eMuCr-YWPQ_A/">Slides</a>
@@ -180,7 +180,7 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I created additional exercises for advanced learners.
+            Created some exercises.
           </div>
           <div class="col-sm-3">
             <a href="https://22s.comp110.com/explore/side-quest/sq01-pong.html">Pong</a>
@@ -211,7 +211,7 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I wrote a guide to the ACT in high school and have updated it quite a bit. I also wrote about advanced math concepts on the ACT.
+            Wrote a guide to the ACT in high school and updated a bit since then. Also wrote about advanced math concepts on the ACT.
           </div>
           <div class="col-sm-3">
             <a href="/blog/2022/guide-to-act/">Jesse's Guide to the ACT®</a>
@@ -223,7 +223,7 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            I created resources for my students and compile them on this website.
+            Created resources for my students and put them here.
           </div>
           <div class="col-sm-3">
             <a href="/blog/2022/tutoring-notes">Notes from lessons</a>
@@ -235,7 +235,7 @@ giscus_comments: true
       <li class="list-group-item">
         <div class="row">
           <div class="col-sm-9">
-            A lot of my blog post ideas came from topics I covered during my tutoring lessons.
+            Many of my blog post ideas came from topics I covered during my tutoring lessons.
           </div>
           <div class="col-sm-3">
             <a href="/blog/category/act/">Blog</a> (ACT category)

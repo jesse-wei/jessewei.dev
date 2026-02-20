@@ -19,10 +19,10 @@ social: true  # includes social icons at the bottom of the page
 
 ---
 
-I'm a Master's student in the [Department of Computer Science](https://cs.unc.edu) at [UNC](https://unc.edu).
+I am building an architecture for proving that real images and videos are real (not AI-generated). We do so by attaching metadata, such as time and GPS location, to images and videos. The metadata must be true, uneditable (i.e., tampering is detectable), and [verifiable](https://verify.contentauthenticity.org/) by anyone. My advisor is Prof. [Andrew Kwong](https://andrewkwong.org).
 
-In 2023, I graduated early and with highest distinction from UNC with a B.S. in Mathematics and a B.S. in Computer Science.
+In 2023, I graduated with highest distinction from UNC with a B.S. in Mathematics and a B.S. in Computer Science.
 
-I am a graduate TA for COMP 311 (Computer Organization). I was a UTA for COMP 311, 210, and 110.
+At UNC, I was instructor of record for COMP 210 and co-taught COMP 311. I was also a TA for several COMP courses.
 
 A fun fact about me: I used to [speedcube](/blog/2021/cubing).
