@@ -5,7 +5,7 @@ date: 2022-06-04T12:00:00-04:00
 description: "Notes from my tutoring sessions."
 categories: act
 tags: math
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 # toc:
 #   sidebar: left

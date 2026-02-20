@@ -7,7 +7,7 @@ img: assets/img/sapsim/SAPsim_still_cropped.jpg
 importance: 2
 toc:
     sidebar: true
-giscus_comments: true
+giscus_comments: false
 category: school
 ---
 

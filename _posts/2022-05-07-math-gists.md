@@ -5,7 +5,7 @@ date: 2022-05-07T13:00:00-04:00
 description: Some math-related GitHub Gists.
 categories: act
 tags: math
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 # toc:
 #   sidebar: left

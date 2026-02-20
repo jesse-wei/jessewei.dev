@@ -4,7 +4,7 @@ title: "Guide to the ACT®"
 date: 2022-08-10T11:00:00-04:00
 description: "Comprehensive guide for the ACT, including how to study and specific tips for the test. Back and heavily improved after being taken down due to copyright strike."
 categories: act
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 toc:
   sidebar: left

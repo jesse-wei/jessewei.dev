@@ -7,7 +7,7 @@ img: assets/img/neuroruler/nr_still.jpg
 importance: 1
 toc:
     sidebar: left
-giscus_comments: true
+giscus_comments: false
 category: school
 ---
 

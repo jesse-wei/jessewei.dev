@@ -7,7 +7,7 @@ img: assets/img/mips_emulator/mips_emulator.jpg
 importance: 3
 toc:
     sidebar: true
-giscus_comments: true
+giscus_comments: false
 category: school
 ---
 

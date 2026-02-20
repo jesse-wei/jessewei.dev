@@ -7,7 +7,7 @@ img: assets/img/rubiks_541/rubiks_541.jpg
 importance: 4
 toc:
     sidebar: true
-giscus_comments: true
+giscus_comments: false
 category: school
 ---
 

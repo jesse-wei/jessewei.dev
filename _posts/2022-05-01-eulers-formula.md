@@ -5,7 +5,7 @@ date: 2022-05-01T12:00:00-04:00
 description: "$$e^{ix}=\\cos (x) +i \\sin (x)$$. $$e^{i \\pi} + 1 = 0$$."
 categories: act
 tags: math
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 toc:
   sidebar: left

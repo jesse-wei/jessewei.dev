@@ -7,7 +7,7 @@ img: assets/img/leds/leds.jpg
 importance: 1
 toc:
     sidebar: true
-giscus_comments: true
+giscus_comments: false
 category: fun
 ---
 

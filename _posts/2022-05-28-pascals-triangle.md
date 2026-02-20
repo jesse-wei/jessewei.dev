@@ -5,7 +5,7 @@ date: 2022-05-28T12:00:00-04:00
 description: "Pascal's triangle and binomial coefficients."
 categories: act
 tags: math
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 toc:
   sidebar: left
