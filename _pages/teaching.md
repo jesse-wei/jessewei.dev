@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: I am one of two awardees of the 2023 Diane Pozefsky Learning Assistant Award.
+description: I served as instructor of record for COMP 210 and co-instructor for COMP 311. I am one of two awardees of the 2023 Diane Pozefsky Learning Assistant Award.
 nav: true
 nav_order: 5
 giscus_comments: true
