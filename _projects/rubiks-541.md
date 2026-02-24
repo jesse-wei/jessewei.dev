@@ -11,8 +11,8 @@ giscus_comments: false
 category: school
 ---
 
-{% include video.html path="https://www.youtube.com/embed/CWI60TmpJHM " class="img-fluid rounded z-depth-1" center=1 %}
-<div class="caption">Full demo</div>
+{% include video.html path="https://www.youtube.com/embed/pIVW-v7xt7M" class="img-fluid rounded z-depth-1" center=1 %}
+<div class="caption">Demo</div>
 
 ## Description
 

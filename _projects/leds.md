@@ -13,8 +13,7 @@ category: fun
 
 Quote from page description is from [Eric](https://eric-unc.tech).
 
-{% include video.html path="https://www.youtube.com/embed/hia_4dOh098" class="img-fluid rounded z-depth-1" center=1 %}
-
+{% include video.html path="https://www.youtube.com/embed/7AnuY7qxKe8" class="img-fluid rounded z-depth-1" center=1 %}
 ## Code
 
 ```c
