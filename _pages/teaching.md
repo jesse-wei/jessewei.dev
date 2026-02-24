@@ -111,6 +111,34 @@ giscus_comments: false
   </div>
 </div>
 
+<!-- COMP 211 (Systems Fundamentals) -->
+<div class="card mt-3">
+  <div class="p-3">
+    <div class="row">
+      <div class="col-sm-10">
+        <h5 id="comp211" class="card-title">Systems Fundamentals</h5>
+        <h6 class="card-subtitle font-italic">Graduate TA (S24, F24)</h6>
+      </div>
+      <div class="col-sm-2 text-sm-right">
+        <span class="badge">
+          211
+        </span>
+      </div>
+    </div>
+    <ul class="card-text font-weight-light list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm-9">
+            Responsibilities were similar to those of the above course (311).
+          </div>
+          <div class="col-sm-3">
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <!-- COMP 210 (Data Structures and Analysis) -->
 <div class="card mt-3">
   <div class="p-3">
